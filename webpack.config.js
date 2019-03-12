@@ -351,18 +351,9 @@ function generateWebpack(options) {
       }));
     });
   }
-  if (options.min) {
-    // use a minifier
-    base.plugins.push(
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false
-      }),
-      new webpack.optimize.UglifyJsPlugin());
-  } else {
-    // generate source maps
-    base.devtool = 'source-map';
-  }
+  
+  // generate source maps
+  base.devtool = 'source-map';
   return base;
 }
 
